@@ -1,0 +1,21 @@
+# if else - compare two characters
+# Strategy: use memory indexing to check equality
+# Setup lookup table for output
+[0]<48
+[1]<49
+# Read first char into A
+A<I
+# Read second char into B
+B<I
+# Mark position A in memory
+C<A
+[C]<1
+# Check if position B is marked
+D<B
+E<[D]
+# E is now 1 if A==B, 0 otherwise
+# Output lookup[E]
+F<E
+O<[F]
+# Halt
+Z<1
