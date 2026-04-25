@@ -1,0 +1,14 @@
+# echo - output input until EOF
+# Read char into A
+A<I
+# Output A (even if 0, it won't output as per hint)
+O<A
+# Check if A is 0 (EOF)
+# We need to halt when A==0
+# Use memory trick: if A==0, set Z to 1
+# Setup: mem[0] = 1
+[0]<1
+# If A==0, Z gets mem[0]=1, else Z gets mem[A] which is 0
+B<A
+Z<[B]
+# Loop continues automatically

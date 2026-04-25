@@ -1,0 +1,22 @@
+# i++ - increment digit with wraparound
+# Read input char ('0' to '9')
+A<I
+# Increment: '0'=48, '9'=57
+# If input is '9' (57), output '0' (48)
+# Otherwise, output input+1
+# Strategy: create lookup table
+[48]<49
+[49]<50
+[50]<51
+[51]<52
+[52]<53
+[53]<54
+[54]<55
+[55]<56
+[56]<57
+[57]<48
+# Output lookup[A]
+B<A
+O<[B]
+# Halt
+Z<1

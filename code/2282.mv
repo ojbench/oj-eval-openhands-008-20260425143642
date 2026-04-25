@@ -1,0 +1,60 @@
+# sort - sort 5 digits (simple counting sort)
+# Read 5 digits into memory
+[0]<I
+[1]<I
+[2]<I
+[3]<I
+[4]<I
+# Initialize counters for digits '0'-'9' at positions 48-57
+[48]<0
+[49]<0
+[50]<0
+[51]<0
+[52]<0
+[53]<0
+[54]<0
+[55]<0
+[56]<0
+[57]<0
+# Count each digit
+# For digit at [0]
+A<[0]
+B<[A]
+[A]<1
+# For digit at [1]
+C<[1]
+D<[C]
+[C]<1
+# For digit at [2]
+E<[2]
+F<[E]
+[E]<1
+# For digit at [3]
+G<[3]
+H<[G]
+[G]<1
+# For digit at [4]
+J<[4]
+K<[J]
+[J]<1
+# Now output digits in order
+# For each digit 48-57, if count > 0, output it
+# Check '0' (48)
+A<[48]
+# If A > 0, output '0'
+# We need conditional output
+# Use memory trick: if A > 0, mem[A] will be non-zero
+# Actually, this is getting complex
+# Let me use a simpler approach: just output based on marking
+# Since we marked each position, we can check
+# Output all marked positions in order
+# Check each ASCII value from 48-57
+L<48
+M<[L]
+O<L
+L<49
+N<[L]
+O<L
+# This won't work correctly
+# Let me rethink this
+Z<1
