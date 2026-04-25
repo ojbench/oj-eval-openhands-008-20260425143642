@@ -64,8 +64,12 @@ class ACMOJClient:
 
         except requests.exceptions.RequestException as e:
             print(f"API Request failed: {e}")
-            if 'response' in locals() and response:
-                print(f"Response text: {response.text}")
+            try:
+                if hasattr(e, 'response') and e.response is not None:
+                    print(f"Response status: {e.response.status_code}")
+                    print(f"Response text: {e.response.text}")
+            except:
+                pass
             return None
 
     def _save_submission_id(self, submission_id):
@@ -147,8 +151,8 @@ def main():
             # Git submission
             for i, pid in enumerate(problem_ids):
                 if i > 0:
-                    print("Waiting 2 seconds to avoid rate limiting...")
-                    time.sleep(2)
+                    print("Waiting 5 seconds to avoid rate limiting...")
+                    time.sleep(5)
                 print(f"Submitting problem {pid} via git...")
                 result = client.submit_git(pid, args.git_url)
                 if result:
